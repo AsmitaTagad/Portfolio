@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import axios from 'axios'
 import { 
   Mail, 
   Phone, 
@@ -27,8 +28,8 @@ const ContactSection: React.FC = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'tanishqshinde295@gmail.com',
-      href: 'mailto:tanishqshinde777@gmail.com',
+      value: 'asmitatagad18@gmail.com',
+      href: 'mailto:asmitatagad18@gmail.com',
       gradient: 'from-blue-500 to-blue-600',
       description: 'Drop me a line anytime'
     },
@@ -37,13 +38,13 @@ const ContactSection: React.FC = () => {
       label: 'Location',
       value: 'Pune, Maharashtra',
       gradient: 'from-purple-500 to-purple-600',
-      description: 'Mohan Nagar, Dhankawadi'
+      description: 'Model Colony, Shivajinagar '
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'Connect with me',
-      href: 'https://www.linkedin.com/in/tanishq-shinde977',
+      href: 'https://www.linkedin.com/in/asmita-tagad-174a4918b/',
       gradient: 'from-blue-600 to-blue-700',
       description: 'Professional network'
     }
@@ -56,33 +57,36 @@ const ContactSection: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
 
   try {
-    const response = await fetch("https://formspree.io/f/mgvynleq", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const response = await axios.post(
+      "https://portfolio-ws8h.onrender.com/api/contactme",
+      formData, 
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-    if (response.ok) {
+    if (response.status === 200) {
       setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } else {
       alert("Something went wrong. Please try again.");
     }
   } catch (error) {
     console.error("Error:", error);
     alert("Something went wrong.");
+  } finally {
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitted(false), 5000);
   }
-
-  setIsSubmitting(false);
-  setTimeout(() => setSubmitted(false), 5000);
 };
+
 
 
   return (
@@ -224,7 +228,7 @@ const ContactSection: React.FC = () => {
               </div>
               <div className="text-center p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-xl border border-white/20 dark:border-gray-700/30">
                 <Globe className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">Remote</div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-white">Remote / WFO </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Work Ready</div>
               </div>
             </motion.div>

@@ -3,13 +3,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import TextType from "@/components/ui/TextType";
-import StarBorder from "@/components/ui/StarBorder"
+import StarBorder from "@/components/ui/StarBorder";
 
 const HeroSection = () => {
   // 1. Define the text you want to animate as an array of strings.
   const descriptiveText = [
-    "Passionate about building intelligent systems and automating complex workflows.",
-    "Currently pursuing BE in Computer Engineering with expertise in Machine Learning, Full-Stack Development, and AI-powered solutions."
+    "Full Stack Developer passionate about crafting scalable, high-performance web and mobile applications.",
+    "Experienced in building intelligent systems using React.js, Node.js, Prisma, PostgreSQL, and AWS Cloud.",
+    "Exploring system design and backend architecture to create impactful digital solutions.",
   ];
 
   return (
@@ -32,12 +33,22 @@ const HeroSection = () => {
         />
         <motion.div
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl backdrop-blur-sm"
         />
         <motion.div
           animate={{ y: [0, -15, 0], rotate: [0, 3, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
           className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-lg backdrop-blur-sm"
         />
       </div>
@@ -50,26 +61,25 @@ const HeroSection = () => {
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
           className="mt-16 font-Playfair bg-gradient-to-br from-blue-400 to-pink-500 py-4 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-7xl"
         >
-          Tanishq Shinde
+          Asmita Tagad
         </motion.h1>
 
         <h2 className="text-xl md:text-2xl text-gray-700 dark:text-slate-300 mt-2">
-          Computer Engineer & AI Enthusiast
+          Full Stack Developer & System Design Enthusiast
         </h2>
 
         {/* 2. Replace the <p> tag with the TextType component. */}
         <TextType
           text={descriptiveText}
           // 3. Pass the original styling classes to maintain the look.
-          className="mt-4 max-w-xl mx-auto text-gray-600 dark:text-slate-400 text-md md:text-lg leading-relaxed"
+          className="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-slate-400 text-md md:text-lg leading-relaxed"
           typingSpeed={40}
           pauseDuration={3000}
         />
 
         <div className="mt-6 flex justify-center gap-4 flex-wrap">
-
           <a
-            href="/C2K221310_TanishqShinde_Resume.pdf"
+            href="/Asmita_Tagad_Resume.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
@@ -79,10 +89,21 @@ const HeroSection = () => {
           </a>
 
           <a
-            href="https://github.com/Tanishq-789"
+            href="https://github.com/AsmitaTagad"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-gray-300 dark:border-white/20 px-6 py-3 text-gray-800 dark:text-white font-semibold shadow-md hover:bg-gray-100 dark:hover:bg-white/10 hover:scale-105 transition-transform"
           >
             View Projects ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/asmita-tagad-174a4918b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-gray-300 dark:border-white/20 px-6 py-3 text-gray-800 dark:text-white font-semibold shadow-md hover:bg-gray-100 dark:hover:bg-white/10 hover:scale-105 transition-transform"
+          >
+            Connect on LinkedIn 💼
           </a>
         </div>
       </div>

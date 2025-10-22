@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
   X,
@@ -9,10 +9,13 @@ import {
   FolderOpen,
   Award,
   Mail,
+  BookOpen,
+  FileText,
   Sun,
   Moon,
-} from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+  Layers,
+} from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,27 +26,27 @@ const Navigation: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home', icon: Home },
-    { name: 'About', href: '#about', icon: User },
-    { name: 'Experience', href: '#experience', icon: Briefcase },
-    { name: 'Projects', href: '#projects', icon: FolderOpen },
-    { name: 'Achievements', href: '#achievements', icon: Award },
-    { name: 'Contact', href: '#contact', icon: Mail },
+    { name: "Home", href: "#home", icon: Home },
+    { name: "About", href: "#about", icon: User },
+    { name: "Skills", href: "#skills", icon: Layers },
+    { name: "Experience", href: "#experience", icon: Briefcase },
+    { name: "Projects", href: "#projects", icon: FolderOpen },
+
+    { name: "Contact", href: "#contact", icon: Mail },
   ];
 
   const scrollToSection = (href: string) => {
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 100); // slight delay ensures DOM is fully rendered
+    }, 100);
     setIsOpen(false);
   };
 
@@ -68,33 +71,31 @@ const Navigation: React.FC = () => {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl border-b border-white/20 dark:border-gray-700/30'
-            : 'bg-white/5 dark:bg-gray-900/5 backdrop-blur-md'
+            ? "bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl border-b border-white/20 dark:border-gray-700/30"
+            : "bg-white/5 dark:bg-gray-900/5 backdrop-blur-md"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+            {/* Logo + Name */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-2 cursor-pointer"
-              onClick={() => scrollToSection('#home')}
+              onClick={() => scrollToSection("#home")}
             >
-              <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-500">
                 <img
-                  src="/logo.webp"
-                  alt="Logo"
-                  className="w-10 h-10 object-contain aspect-square"
-                  style={{ imageRendering: 'auto' }}
+                  src="/asmita-logo.jpg"
+                  alt="Asmita Logo"
+                  className="w-9 h-9 object-contain"
                 />
               </div>
-              <span className="text-gray-900 dark:text-slate-100 font-semibold text-lg">
-                Tanishq Shinde
+              <span className="text-gray-900 dark:text-slate-100 font-semibold text-lg tracking-wide">
+                Asmita Tagad
               </span>
             </motion.div>
 
-            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-1">
               {navItems.map((item) => (
                 <motion.button
@@ -110,7 +111,7 @@ const Navigation: React.FC = () => {
               ))}
             </div>
 
-            {/* Right Side Controls */}
+            {/* Right Controls */}
             <div className="flex items-center space-x-2">
               {/* Theme Toggle */}
               <motion.button
@@ -121,14 +122,18 @@ const Navigation: React.FC = () => {
               >
                 <motion.div
                   initial={false}
-                  animate={{ rotate: theme === 'dark' ? 180 : 0 }}
+                  animate={{ rotate: theme === "dark" ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {theme === "dark" ? (
+                    <Sun className="w-4 h-4" />
+                  ) : (
+                    <Moon className="w-4 h-4" />
+                  )}
                 </motion.div>
               </motion.button>
 
-              {/* Mobile Hamburger Button */}
+              {/* Mobile Menu Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -139,19 +144,23 @@ const Navigation: React.FC = () => {
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                  {isOpen ? (
+                    <X className="w-5 h-5" />
+                  ) : (
+                    <Menu className="w-5 h-5" />
+                  )}
                 </motion.div>
               </motion.button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-t border-white/20 dark:border-gray-700/30"
             >

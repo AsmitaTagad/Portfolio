@@ -1,38 +1,115 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github as LucideGithub, Code2, Bot, Sparkles } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github as LucideGithub, Code2 } from "lucide-react";
+import { Laptop, ShoppingCart, Server, Users } from "lucide-react";
 
 const ProjectsSection: React.FC = () => {
   const projects = [
     {
       id: 1,
-      name: "Wedding Planner AI Backend System",
-      description: "A comprehensive AI-powered system that automates wedding planning workflows with intelligent coordination and communication management.",
+      name: "FreedyGo",
+      description:
+        "A scalable food delivery platform for B2B service provider with real-time order tracking,inventory management, analytics dashboards, and multi-role user management.",
       highlights: [
-        "Automated 5+ wedding workflows—guest invites, vendor discovery, travel coordination—reducing manual effort by 85% using modular Python bots.",
-        "Handled 100+ guest communications via WhatsApp (Twilio API) and emails with real-time tracking and smart follow-ups.",
-        "Scraped and ranked 20+ venues, 15+ photographers, and 30+ train options using Selenium; generated budget-optimized JSON outputs."
+        "Developed full-stack features using React.js,Next js, Node.js, and MongoDB for high-traffic operations.",
+        "Implemented real-time order tracking and notifications across web and mobile platforms.",
+        "Integrated payment gateways, push notifications, and admin dashboards for operational efficiency.",
       ],
-      technologies: ["Python", "MongoDB", "Streamlit", "Twilio API", "Email Automation", "JSON", "Pandas"],
-      icon: Bot,
-      gradient: "from-emerald-500 to-teal-600",
-      bgGradient: "from-emerald-500/10 to-teal-600/10",
-      link: "https://github.com/Tanishq-789/Event-planning-Automation"
+      technologies: [
+        "Javascript",
+        "React.js",
+        "React Native",
+        "Node.js",
+        "MongoDB",
+        "AWS",
+        "Firebase",
+        "REST APIs",
+        "Express Js",
+      ],
+      icon: ShoppingCart,
+      gradient: "from-green-500 to-teal-600",
+      bgGradient: "from-green-500/10 to-teal-600/10",
+      link: "https://freedygo.com",
     },
     {
       id: 2,
-      name: "Personalized Skincare Recommendation System",
-      description: "Deep learning-powered recommendation system using advanced computer vision to analyze skin conditions and provide personalized care suggestions.",
+      name: "Meata2z",
+      description:
+        "An online marketplace for meat and food products with automated order processing and customer tracking.",
       highlights: [
-        "Developed a DL-powered recommendation system using ResNet-50 with 95.60% accuracy across 6 skin conditions.",
-        "Analyzed 2,394+ images to build a high-quality dataset ensuring reliable predictions."
+        "Built end-to-end full-stack solution using React.js, Node.js, and AWS services.",
+        "Designed dynamic dashboards for vendors and customers, improving engagement and operational efficiency.",
+        "Integrated secure payment and order management system for seamless transactions.",
       ],
-      technologies: ["Pandas", "NumPy", "matplotlib", "torchvision", "TensorFlow", "Streamlit"],
-      icon: Sparkles,
-      gradient: "from-purple-500 to-pink-600",
-      bgGradient: "from-purple-500/10 to-pink-600/10",
-      link: "https://github.com/Tanishq-789/Skin-condition-analyzer"
-    }
+      technologies: [
+        "Javascript",
+        "React.js",
+        "React Native",
+        "Node.js",
+        "PostgreSQL",
+        "AWS",
+        "Firebase",
+        "REST APIs",
+        "Tailwind CSS",
+        "Express Js",
+      ],
+      icon: ShoppingCart,
+      gradient: "from-red-500 to-purple-600",
+      bgGradient: "from-red-500/10 to-purple-600/10",
+
+      link: "https://meata2z.com",
+    },
+    {
+      id: 3,
+      name: "Skilotech",
+      description:
+        "A comprehensive platform for candidates and recruiters to manage Resume Building, CV creation, and JD matching with automated progress tracking and analytics dashboards.",
+      highlights: [
+        "Developed full-stack application using React.js and Node.js with Mongodb backend, supporting both candidate and recruiter workflows.",
+        "Implemented analytics dashboards for recruiters to track applicant progress and for candidates to monitor their skill development.",
+        "Optimized server performance and integrated secure login with role-based access controls for multiple user types.",
+      ],
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Mongodb",
+        "AWS",
+        "REST APIs",
+        "Framer Motion",
+        "Open AI",
+      ],
+      icon: Laptop,
+      gradient: "from-indigo-500 to-blue-600",
+      bgGradient: "from-indigo-500/10 to-blue-600/10",
+      link: "https://skilotech.com",
+    },
+
+    {
+      id: 4,
+      name: "Skilotech HRMS Attendance App",
+      description:
+        "A complete HR management system for attendance, leave, payroll, and employee management with admin panel and reports.",
+      highlights: [
+        "Developed end-to-end HRMS using React.js, Node.js, and MongoDB with Prisma integration.",
+        "Implemented automated payroll, leave requests, and attendance tracking for multiple organizations.",
+        "Designed admin dashboards with detailed reporting and analytics for organizational insights.",
+      ],
+      technologies: [
+        "Javascript",
+        "Next Js",
+        "React Native",
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "AWS",
+        "REST APIs",
+        "Tailwind CSS",
+      ],
+      icon: Laptop,
+      gradient: "from-indigo-300 to-blue-300",
+      bgGradient: "from-indigo-300/10 to-blue-300/10",
+      link: "#",
+    },
   ];
 
   return (
@@ -48,10 +125,14 @@ const ProjectsSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+           My {" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Innovative solutions built with cutting-edge technologies, showcasing expertise in AI, automation, and full-stack development
+            Full-stack projects showcasing scalable web apps, real-time systems,
+            and advanced features for businesses and education.
           </p>
         </motion.div>
 
@@ -65,19 +146,20 @@ const ProjectsSection: React.FC = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ scale: 1.02, rotateY: 5 }}
               className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/30 transform-gpu"
-              style={{ transformStyle: 'preserve-3d' }}
+              style={{ transformStyle: "preserve-3d" }}
             >
-              {/* Project Icon */}
               <div className="absolute -top-6 left-8">
-                <div className={`w-12 h-12 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`w-12 h-12 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                >
                   <project.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
 
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+              />
 
-              {/* Content */}
               <div className="relative z-10 pt-4">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
@@ -90,7 +172,6 @@ const ProjectsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Highlights */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                     Key Achievements
@@ -106,7 +187,9 @@ const ProjectsSection: React.FC = () => {
                         className="flex items-start space-x-3 group/item"
                       >
                         <div className="flex-shrink-0 mt-1">
-                          <div className={`w-2 h-2 bg-gradient-to-r ${project.gradient} rounded-full group-hover/item:scale-125 transition-transform duration-200`} />
+                          <div
+                            className={`w-2 h-2 bg-gradient-to-r ${project.gradient} rounded-full group-hover/item:scale-125 transition-transform duration-200`}
+                          />
                         </div>
                         <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed group-hover/item:text-gray-900 dark:group-hover/item:text-white transition-colors duration-200">
                           {highlight}
@@ -116,7 +199,6 @@ const ProjectsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Technologies */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                     Technologies Used
@@ -131,10 +213,6 @@ const ProjectsSection: React.FC = () => {
                         transition={{ duration: 0.3, delay: idx * 0.05 }}
                         whileHover={{ scale: 1.1, y: -2 }}
                         className={`px-3 py-1 bg-gradient-to-r ${project.bgGradient} border border-current rounded-full text-sm font-medium cursor-default`}
-                        style={{
-                          background: `linear-gradient(to right, ${project.gradient.includes('emerald') ? 'rgb(16 185 129 / 0.1)' : 'rgb(168 85 247 / 0.1)'}, ${project.gradient.includes('emerald') ? 'rgb(13 148 136 / 0.1)' : 'rgb(236 72 153 / 0.1)'})`,
-                          color: project.gradient.includes('emerald') ? 'rgb(5 150 105)' : 'rgb(147 51 234)'
-                        }}
                       >
                         {tech}
                       </motion.span>
@@ -142,9 +220,12 @@ const ProjectsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Corrected View Details Button */}
                 <div className="flex space-x-4">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <motion.button
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
@@ -156,38 +237,9 @@ const ProjectsSection: React.FC = () => {
                   </a>
                 </div>
               </div>
-
-              {/* Floating Element */}
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className={`absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br ${project.gradient} rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300`}
-              />
             </motion.div>
           ))}
         </div>
-
-        {/* View All Projects Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <a href="https://github.com/Tanishq-789" target="_blank" rel="noopener noreferrer">
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <LucideGithub className="w-5 h-5 group-hover:rotate-12 transition-transform duration-200" />
-              <span>View All Projects on GitHub</span>
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
-            </motion.button>
-          </a>
-        </motion.div>
-
       </div>
     </section>
   );
